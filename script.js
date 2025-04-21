@@ -55,9 +55,15 @@ function getNewHit (){
   document.querySelector("#hitVal").textContent = hitRandomNumber;
 }
 
-// this function create for score
+// this function create for increaseScore
 function increaseScore(){
   score += 10;
+  document.querySelector("#scoreVal").textContent = score;
+}
+
+// this function create for decreaseScore
+function decreaseScore(){
+  score -= 10;
   document.querySelector("#scoreVal").textContent = score;
 }
 
@@ -69,6 +75,9 @@ if(clickedNumber === hitRandomNumber){
   increaseScore();
   makeBubble();
   getNewHit();
+}else{
+  decreaseScore();
+  details.target.style.backgroundColor = "red";
 }
 });
 
